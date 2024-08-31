@@ -8,25 +8,25 @@ import numpy as np
 
 st.title("Option Pricing and Portfolio Optimization")
 
-# Sidebar for Model Selection
+
 model = st.sidebar.selectbox(
     "Select Option Pricing Model",
     ("Black-Scholes", "Monte Carlo", "Binomial Tree")
 )
 
-# User Inputs
+
 ticker = st.text_input("Enter Stock Ticker", "AAPL")
 K = st.number_input("Strike Price", value=100.0)
 T = st.number_input("Time to Maturity (years)", value=1.0)
 r = st.number_input("Risk-Free Rate", value=0.05)
 sigma = st.number_input("Volatility", value=0.2)
 
-# Fetching Stock Data
+
 data = yf.Ticker(ticker)
 S = data.history(period="1d")["Close"].iloc[-1]
 st.write(f"Current Stock Price for {ticker}: ${S}")
 
-# Calculate Option Price
+
 if model == "Black-Scholes":
     price = black_scholes_call_price(S, K, T, r, sigma)
 elif model == "Monte Carlo":
@@ -36,7 +36,7 @@ else:
 
 st.write(f"Option Price using {model}: ${price:.2f}")
 
-# Portfolio Optimization
+
 if st.button("Optimize Portfolio"):
     prices = [black_scholes_call_price(S, K, T, r, sigma),
               monte_carlo_option_price(S, K, T, r, sigma),

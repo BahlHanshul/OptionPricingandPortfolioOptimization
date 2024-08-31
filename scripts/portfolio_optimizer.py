@@ -11,7 +11,7 @@ def optimize_portfolio(prices, weights, returns):
     optimized_portfolio_value = np.dot(prices, adjusted_weights)
     return optimized_portfolio_value, adjusted_weights
 
-# Sample Input
+# Sample (Example for me)
 prices = np.array([10, 12, 11])  # Prices from Black-Scholes, Monte Carlo, and Binomial
 weights = np.array([0.4, 0.3, 0.3])  # Initial weights
 returns = np.array([0.08, 0.10, 0.09])  # Expected returns

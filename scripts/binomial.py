@@ -29,6 +29,3 @@ def binomial_tree_option_price(S, K, T, r, sigma, steps=100):
 
     return option_values[0]
 
-# Sample Input
-#price = binomial_tree_option_price(S, K, T, r, sigma)
-#print(f"Binomial Tree Call Price: {price}")

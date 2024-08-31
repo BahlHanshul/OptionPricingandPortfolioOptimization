@@ -15,11 +15,4 @@ def black_scholes_call_price(S, K, T, r, sigma):
     call_price = S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
     return call_price
 
-# Sample Input
-S = 100  # Current stock price
-K = 95   # Strike price
-T = 1    # Time to maturity in years
-r = 0.05 # Risk-free rate
-sigma = 0.2 # Volatility
-price = black_scholes_call_price(S, K, T, r, sigma)
-print(f"Black-Scholes Call Price: {price}")
+
